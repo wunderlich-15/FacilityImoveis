@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body{
+    background: #f2f2f2;
+}
+
+/*-----------------------------------------------------------inicio da navbar-----------------------------------------------------------*/
+nav{
+    background: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    height: 120px;
+    padding: 0 100px;
+    border-bottom:2px solid #00bfa2;
+}
+
+nav .iten-login{
+    display: flex;
+    list-style: none;
+    text-transform: uppercase;
+    padding: 0 0 0 10px;
+    margin-right: 20px;
+}
+
+nav .iten-login li{
+    padding: 0 15px 0 15px;
+    border-right: 1px solid #00bfa2;
+    border-left: 1px solid #00bfa2;
+}
+
+nav .iten-login li a{
+    text-decoration: none;
+    color: #0275d8;
+    font-size: 18px;
+    display: flex;
+}
+
+nav .iten-login li a:hover{
+    color:#009a53;
+    transition: .3s;
+}
+
+nav .User-icon{
+    margin-left: 10px;
+}
+nav .logo{
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: -1px;
+    position: relative;
+    right: 90px;
+}
+
+nav .nav-itens{
+    display: flex;
+    list-style: none;
+    padding: 0 0 0 40px;
+    margin-right: 20px;
+    position: relative;
+    right: 100px;
+}
+
+nav .nav-itens li{
+    padding: 0 15px;
+    border-right:1px solid #00bfa2;
+}
+
+nav .nav-itens li a{
+    color:#0275d8;
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: none;
+}
+nav .nav-itens li a:hover{
+    color:#009a53;
+}
+
+nav form{
+    display: flex;
+    height: 40px;
+    border-radius: 2px;
+    padding: 2px;
+    background: white;
+    min-width: 18%!important;
+    border:1px solid rgba(155,155,155, 0.2);
+}
+
+nav form .search-data{
+    height: 100%;
+    width: 100%;
+    padding: 0 10px;
+    color:#000;
+    font-weight: 500;
+    background: none;
+    border: none;
+    font-size: 17px;
+}
+
+nav form button{
+    padding: 0, 15px;
+    width: 50px;
+    background-color: #00bfa2;
+    border: none;
+    cursor: pointer;
+    font-size: 17px;
+    color:#fff;
+}
+
+nav .menu-icon,
+nav .search-icon,
+nav .cancel-icon{
+    width: 40px;
+    color:#fff;
+    text-align: center;
+    font-size: 18px;
+    cursor: pointer;
+    display: none;
+}
+nav .menu-icon,
+nav .search-icon,
+nav .cancel-icon{
+    display: none;
+}
+
+/*@media (max-width: 1245px){
+    nav{
+        padding: 0 50px;
+    }
+}
+
+@media (max-width: 1140px){
+    nav{
+        padding: 0px;
+    }
+    nav .logo{
+        flex:2;
+        text-align: center;
+    }
+    nav .nav-itens{
+        position: fixed;
+        z-index: 99;
+        top: 70px;
+        width: 100%;
+        height: 100%;
+        background:#14141f;
+        display: inline-block;
+        padding: 10px 50px 0 50px;
+        text-align: center;
+
+    }
+    nav .nav-itens li{
+        line-height: 40px;
+        margin: 30px 0;
+        border-right: none;
+    }
+    nav .nav-itens li a{
+        font-size: 20px; 
+    }
+    nav form{
+        display: none;
+    }
+    nav .menu-icon{
+        display: block;
+    }
+    nav .search-icon,
+    nav .menu-icon span{
+        display: block;
+    }
+}*/
+
+/*-----------------------------------------------------------fim da navbar-----------------------------------------------------------*/
+/**Inicio Coisas essenciais-------------------------------------------------------------------------*/
+footer{
+    background: #55595c;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    height: 150px;
+    padding: 0 100px;
+    border-top:2px solid #00bfa2;
+}
+footer .itens-footer{
+    display: flex;
+    list-style: none;
+    text-decoration: none;
+    padding: 0 0 0 40px;
+    margin-right: 20px;
+    position: relative;
+    right: 400px;
+
+}
+footer .itens-footer li{
+    padding: 0 15px;
+}
+
+footer .itens-footer li a{
+    color:#00bfa2;
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: none;
+}
+footer .itens-footer li a:hover{
+    color:#009a53;
+}
+footer .copy{
+    color:#fff;
+    position: relative;
+    left:250px;
+    top:-20px;
+    font-size: 10px;
+
+}
+/*----------------------------------------------------------Inicio Home--------------------------------------------------------------*/
+.Carousel{}
+
+
+/*----------------------------------------------------------Final Home--------------------------------------------------------------*/
