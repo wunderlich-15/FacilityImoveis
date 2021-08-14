@@ -1,0 +1,15 @@
+<?php session_start();
+include "connect.php";
+if('status_login' === true){
+  $id = $_SESSION["id_cliente"];
+  $sql="SELECT nome_cliente FROM cliente where id_cliente ='{$id}'";
+  $run_sql=mysqli_query($conexao, $sql);
+  if(mysqli_num_rows($run_sql) > 0){
+  }
+  while($row=mysqli_fetch_assoc($run_sql)){
+    echo "SEJA BEM-VINDO " . $row["nome_cliente"];
+  }
+}else{
+  session_destroy();
+  session_unset();
+}

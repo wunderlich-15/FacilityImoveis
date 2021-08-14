@@ -1,7 +1,8 @@
 <?php 
 session_start();
+//require "Pages/header.php"
 ?>
-<?php include "connect.php";
+<?php include "Scripts/PHP/connect.php";
 
 $id = $_SESSION["id_cliente"];
 $sql = "SELECT * FROM cliente WHERE id_cliente ='{$id}'";
@@ -26,6 +27,6 @@ while($row=mysqli_fetch_assoc($run_sql)){
 </head>
 <body>
     <a href="index.php">home</a>
-    <a href="logout.php"><button class="btn btn-danger">sair</button></a>
+    <a href="Scripts/PHP/logout.php"><button class="btn btn-danger">sair</button></a>
 </body>
 </html>

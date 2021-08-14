@@ -14,7 +14,7 @@ if(isset($_POST["submit"])){
 		while($row=mysqli_fetch_assoc($run_sql)){
 			$_SESSION["id_cliente"] = $row["id_cliente"];
 			$_SESSION['message']="login com sucesso";
-			header("Location: painel.php");
+			header("Location:../../painel.php");
 		}
 	}
 }

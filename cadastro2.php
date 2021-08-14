@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("connect.php");
+include("Scripts/PHP/connect.php");
 
 $nome = $_POST['nome'];
 $creci = $_POST['creci'];
