@@ -1,16 +1,5 @@
 <?php session_start();
 include "Scripts/PHP/connect.php";
-if($_SESSION['status_login'] === true){
-  $id = $_SESSION["id_cliente"];
-  $sql="SELECT nome_cliente FROM cliente where id_cliente ='{$id}'";
-  $run_sql=mysqli_query($conexao, $sql);
-  if(mysqli_num_rows($run_sql) > 0){
-  }
-  while($row=mysqli_fetch_assoc($run_sql)){
-    echo "SEJA BEM-VINDO " . $row["nome_cliente"];
-  }
-}else{
-}
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +8,7 @@ if($_SESSION['status_login'] === true){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modelo 2</title>
+    <title>Home</title>
     <link rel="stylesheet" href="CSS/main.css">
 
     <!--provisorio esse caminho-->
@@ -40,9 +29,22 @@ if($_SESSION['status_login'] === true){
             <li><a href="#">Venda</a></li>
             <li><a href="cadastrocliente.php">Cadastre-se</a></li>
         </div>
+
+    <?php if ($_SESSION['status_login'] === true):
+        $id = $_SESSION["id_cliente"];
+        $sql="SELECT nome_cliente FROM cliente where id_cliente ='{$id}'";
+        $run_sql=mysqli_query($conexao, $sql);
+        if(mysqli_num_rows($run_sql) > 0){
+
+        }
+        ?>
         <div class="iten-login">
+            <li><a href="painel.php"><?php while($row=mysqli_fetch_assoc($run_sql)){ echo $row["nome_cliente"];}?><div class="User-icon"><span class="fas fa-user-alt"></span></div></a></li>
+        <div>
+    <?php else: ?>
+        <!--<div class="iten-login">
             <li><a href="telalogin.php">login<div class="User-icon"><span class="fas fa-user-alt"></span></div></a></li>
-        </div>
+        </div>-->
         <div class="search-icon"><span class="fas fa-search"></span></div>
         <div class="cancel-icon"><span class="fas fa-times"></span></div>
         <form action="#">
