@@ -24,31 +24,26 @@ include "Scripts/PHP/connect.php";
         <div class="menu-icon"><span class="fas fa-bars"></span></div>
         <div class="logo"><img src="Images/Logo/Logo Facility 2.png" width="150px" height="110px"></div>
         <div class="nav-itens">
-            <li><a href="#">Home</a></li>
+            <li><a href="index.php">Home</a></li>
             <li><a href="#">Aluguel</a></li>
             <li><a href="#">Venda</a></li>
             <li><a href="cadastrocliente.php">Cadastre-se</a></li>
         </div>
 
-    <?php if ($_SESSION['status_login'] === true):
-        $id = $_SESSION["id_cliente"];
-        $sql="SELECT nome_cliente FROM cliente where id_cliente ='{$id}'";
-        $run_sql=mysqli_query($conexao, $sql);
-        if(mysqli_num_rows($run_sql) > 0){
-
-        }
-        ?>
+    <?php if (isset($_SESSION['status_login']) === true):?>
         <div class="iten-login">
-            <li><a href="painel.php"><?php while($row=mysqli_fetch_assoc($run_sql)){ echo $row["nome_cliente"];}?><div class="User-icon"><span class="fas fa-user-alt"></span></div></a></li>
+            <li><a href="painel.php">Perfil</a></li>
         <div>
     <?php else: ?>
-        <!--<div class="iten-login">
-            <li><a href="telalogin.php">login<div class="User-icon"><span class="fas fa-user-alt"></span></div></a></li>
-        </div>-->
+    <?php unset($_SESSION['status_login']); session_destroy();?>
+        <div class="iten-login">
+            <li><a href="login.php">login</a></li>
+        </div>
+    <?php endif; ?>
+
         <div class="search-icon"><span class="fas fa-search"></span></div>
-        <div class="cancel-icon"><span class="fas fa-times"></span></div>
         <form action="#">
             <input type="Search" class="search-data" placeholder="Pesquisa" required>
             <button type="submit" class="fas fa-search"></button>
         </form>
-    </nav>
+</nav>

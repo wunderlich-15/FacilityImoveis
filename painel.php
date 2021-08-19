@@ -1,18 +1,33 @@
 <?php 
-session_start();
-//require "Pages/header.php"
+require "Pages/header.php"
 ?>
-<?php include "Scripts/PHP/connect.php";
 
-$id = $_SESSION["id_cliente"];
-$sql = "SELECT * FROM cliente WHERE id_cliente ='{$id}'";
+<?php //include "Scripts/PHP/connect.php";
+if (isset($_SESSION["login_corretor"]) === true){
+    unset($_SESSION["login_cliente"]);
+    $id = $_SESSION["id_corretor"];
+    $sql = "SELECT * FROM corretor WHERE id_corretor ='{$id}'";
 
-$run_sql=mysqli_query($conexao, $sql);
-if(mysqli_num_rows($run_sql) > 0){
+    $run_sql=mysqli_query($conexao, $sql);
+    if(mysqli_num_rows($run_sql) > 0){
+    }
+    while($row=mysqli_fetch_assoc($run_sql)){
+        echo "SEJA BEM-VINDO CORRETOR" . $row["nome_corretor"];
+    }
 }
-while($row=mysqli_fetch_assoc($run_sql)){
-    echo "SEJA BEM-VINDO " . $row["nome_cliente"];
+if(isset($_SESSION['login_cliente']) === true){
+    unset($_SESSION["login_corretor"]);
+    $id = $_SESSION["id_cliente"];
+    $sql = "SELECT * FROM cliente WHERE id_cliente ='{$id}'";
+
+    $run_sql=mysqli_query($conexao, $sql);
+    if(mysqli_num_rows($run_sql) > 0){
+    }
+    while($row=mysqli_fetch_assoc($run_sql)){
+        echo "SEJA BEM-VINDO " . $row["nome_cliente"];
+    }
 }
+
 ?>
 <?php //echo $_SESSION['email_cliente']; ?>
 

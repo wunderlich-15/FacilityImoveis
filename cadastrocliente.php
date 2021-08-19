@@ -17,6 +17,7 @@
 <center><p>CADASTRO</center>
 <form action="cadastro.php" method="POST">
 <p>Nome:<input type="text" name="nome" size="35"><br>
+<p>Sobrenome:<input type="text" name="snome" size="35"><br>
 <p>RG:<input type="text" name="RG" size="35"><br>
 <p>Telefone:<input type="text" name="telefone" size="25"><br>
 <p>Email:<input type="text" name="email" size="35"><br>
