@@ -23,8 +23,13 @@ foto_corretor varchar(255),
 CREATE TABLE anuncio(
 id_anuncio int(11) NOT NULL,
 titulo_anuncio varchar(220) NOT NULL,
-enedereco_anuncio varchar(255) NOT NULL,
-valor_anuncio double NOT NULL
+endereco_anuncio varchar(255) NOT NULL,
+cidade_anuncio varchar(150) NOT NULL,
+id_corretor int(11) NOT NULL,
+nome_corretor varchar(155) NOT NULL,
+telefone_corretor varchar(11) NOT NULL,
+tipo_anuncio varchar(7) NOT NULL,
+valor_anuncio double NOT NULL,
 descricao_anuncio varchar(255) NOT NULL,
 criacao_anuncio datetime NOT NULL
 )
@@ -50,3 +55,6 @@ ALTER TABLE `corretor`
 
 ALTER TABLE `anuncio`
   MODIFY `id_anuncio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+ALTER TABLE `anuncio`
+ ADD CONSTRAINT fk_idvendedor FOREIGN KEY (id_corretor) REFERENCES corretor (id_corretor);

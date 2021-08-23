@@ -9,7 +9,7 @@
           session_destroy();
     }
     ?>
-<center><p>Login</center>
+<center><p>LOGIN</p>
 <div class="notification is-danger">
     <p>ERRO:USUARIO OU SENHA INVALIDOS</p>
 </div>
@@ -20,8 +20,7 @@
 <p><input type="radio" name="tipo" value="corretor"> Corretor
 <p><input type="radio" name="tipo" value="cliente"> Cliente
 <p><input type="submit" name="submit" value="entrar"></p>
- 
-
+</center>
 
 </body>
 </html>

@@ -1,7 +1,11 @@
 <?php 
 require "Pages/header.php"
 ?>
-
+<?php 
+if(isset($_SESSION['status_login']) === false){
+    header("location: login.php");
+}
+?>
 <?php //include "Scripts/PHP/connect.php";
 if (isset($_SESSION["login_corretor"]) === true){
     unset($_SESSION["login_cliente"]);
@@ -12,9 +16,11 @@ if (isset($_SESSION["login_corretor"]) === true){
     if(mysqli_num_rows($run_sql) > 0){
     }
     while($row=mysqli_fetch_assoc($run_sql)){
-        echo "SEJA BEM-VINDO CORRETOR" . $row["nome_corretor"];
+        echo "SEJA BEM-VINDO CORRETOR " . $row["nome_corretor"] . "ID:" . $_SESSION["id_corretor"];
     }
-}
+}?>
+<a href="anunciar.php"> Anunciar</a>
+<?php
 if(isset($_SESSION['login_cliente']) === true){
     unset($_SESSION["login_corretor"]);
     $id = $_SESSION["id_cliente"];
@@ -38,7 +44,7 @@ if(isset($_SESSION['login_cliente']) === true){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Perfil</title>
 </head>
 <body>
     <a href="index.php">home</a>
