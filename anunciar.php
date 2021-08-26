@@ -47,7 +47,7 @@ if(isset($_POST['anunciar'])){
     $valor = $_POST['valor'];
     $descricao = $_POST['descricao'];
 
-    $sql2 = "INSERT INTO anuncio (titulo_anuncio, endereco_anuncio, cidade_anuncio, tipo_anuncio, valor_anuncio, descricao_anuncio, criacao_anuncio, id_corretor, nome_corretor, telefone_corretor) 
+    $sql2 = "INSERT INTO anuncio (titulo_anuncio, endereco_anuncio, cidade_anuncio, tipo_anuncio, valor_anuncio, descricao_anuncio, criacao_anuncio, id_vendedor, nome_vendedor, telefone_vendedor) 
             VALUES ('$titulo', '$endereco', '$cidade','$tipo', '$valor', '$descricao', NOW() ,'$id', '$nome', '$telefone')";
 
 

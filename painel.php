@@ -20,6 +20,7 @@ if (isset($_SESSION["login_corretor"]) === true){
     }
 }?>
 <a href="anunciar.php"> Anunciar</a>
+<a href="meusanuncios.php">Anuncios</a>
 <?php
 if(isset($_SESSION['login_cliente']) === true){
     unset($_SESSION["login_corretor"]);

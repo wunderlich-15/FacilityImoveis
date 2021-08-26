@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+<?php require "Pages/header.php"?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro cliente</title>
@@ -24,6 +25,7 @@
 <p>Senha:<input type="text" name="senha" size="35"><br>
 <p><input type="submit" value="Cadastrar"></p>
 <input type="hidden" name="update" value="">
+<a href=cadastrocorretor.php>corretor cadastre-se aqui</a>
 
 
 </body>
