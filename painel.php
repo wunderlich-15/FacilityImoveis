@@ -16,7 +16,7 @@ if (isset($_SESSION["login_corretor"]) === true){
     if(mysqli_num_rows($run_sql) > 0){
     }
     while($row=mysqli_fetch_assoc($run_sql)){
-        echo "SEJA BEM-VINDO CORRETOR " . $row["nome_corretor"] . "ID:" . $_SESSION["id_corretor"];
+        echo "SEJA BEM-VINDO CORRETOR " . $row["nome_corretor"] . " ID: " . $_SESSION["id_corretor"];
     }
 }?>
 <a href="anunciar.php"> Anunciar</a>
@@ -48,7 +48,6 @@ if(isset($_SESSION['login_cliente']) === true){
     <title>Perfil</title>
 </head>
 <body>
-    <a href="index.php">home</a>
     <a href="Scripts/PHP/logout.php"><button class="btn btn-danger">sair</button></a>
 </body>
 </html>

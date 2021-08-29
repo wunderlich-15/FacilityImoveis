@@ -33,9 +33,9 @@ $telefone = $row['telefone_corretor'];
     <option value="aluguel">Aluguel</option>
     <option value="venda">Venda</option>
 </select>
-<p>Valor:<input type="double" name="valor" size="35"><br>
+<p>Valor:<input type="number" name="valor" size="35"><br>
 <p>Descricao:<input type="text" name="descricao" size="60"><br>
-<p><input type="submit" name="anunciar" value="Anunciar"></p>
+<p><button class="btn btn-success" type="submit" name="anunciar" value="Anunciar">Anunciar</button></p>
 
 <?php
 //inicio informaçãoes do anuncio
