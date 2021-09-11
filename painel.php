@@ -18,9 +18,12 @@ if (isset($_SESSION["login_corretor"]) === true){
     while($row=mysqli_fetch_assoc($run_sql)){
         echo "SEJA BEM-VINDO CORRETOR " . $row["nome_corretor"] . " ID: " . $_SESSION["id_corretor"];
     }
-}?>
+
+?>
+<a href="edit-profile-form-corretor.php?id=<?php echo"$id"?>">Editar</a>
 <a href="anunciar.php"> Anunciar</a>
 <a href="meusanuncios.php">Anuncios</a>
+<?php } ?>
 <?php
 if(isset($_SESSION['login_cliente']) === true){
     unset($_SESSION["login_corretor"]);
@@ -33,10 +36,10 @@ if(isset($_SESSION['login_cliente']) === true){
     while($row=mysqli_fetch_assoc($run_sql)){
         echo "SEJA BEM-VINDO " . $row["nome_cliente"];
     }
-}
 
 ?>
-<?php //echo $_SESSION['email_cliente']; ?>
+<a href="edit-profile-form-cliente.php?id=<?php echo"$id"?>">Editar</a>
+<?php } ?>
 
 
 <!DOCTYPE html>
@@ -49,5 +52,6 @@ if(isset($_SESSION['login_cliente']) === true){
 </head>
 <body>
     <a href="Scripts/PHP/logout.php"><button class="btn btn-danger">sair</button></a>
+    <p><a href="Scripts/PHP/delete-profile-corretor.php?id=<?php echo"$id"?>"><button class="btn btn-danger">APAGAR CONTA</button></p>
 </body>
 </html>

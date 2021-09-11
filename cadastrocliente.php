@@ -22,7 +22,8 @@
 <p>RG:<input type="text" name="RG" size="35"><br>
 <p>Telefone:<input type="text" name="telefone" size="25"><br>
 <p>Email:<input type="text" name="email" size="35"><br>
-<p>Senha:<input type="text" name="senha" size="35"><br>
+<p>Senha:<input type="password" name="senha" size="35"><br>
+<p>Confirme a senha:<input type="password" name="senha" size="35"><br>
 <p><input type="submit" value="Cadastrar"></p>
 <input type="hidden" name="update" value="">
 <a href=cadastrocorretor.php>corretor cadastre-se aqui</a>

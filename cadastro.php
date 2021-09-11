@@ -17,6 +17,6 @@ if($conexao->query($sql) === TRUE){
 
 $conexao->db = null;
 
-header('Location: cadastrocliente.php');
+header('Location: login.php');
 exit();
 ?>
