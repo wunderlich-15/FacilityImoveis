@@ -25,15 +25,17 @@ $id_per = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
             <div class="row">
                 <h1>Editar Perfil</h1>
                 <div class="col-md-6">
-                    img
+                <form action="Scripts/PHP/edit-profile-cliente.php?id=<?php echo"$id_cliente"?>" method="Post" enctype="multipart/form-data">
+                <span class="rounded"><img src="Images/upload/profile/cliente/<?php echo $row["foto_cliente"]?>" alt="..." class="img-thumbnail" ></span>
+                <p>Alterar foto de perfil: <input type="file" required name="arquivo">
                 </div>
-                <div class="col-md-6">
-                    <form action="Scripts/PHP/edit-profile-cliente.php?id=<?php echo"$id_cliente"?>" method="Post" enctype="multipart/form-data">
+                <div class="col-md-6"> 
+                <form action="Scripts/PHP/edit-profile-cliente.php?id=<?php echo"$id_cliente"?>" method="Post" enctype="multipart/form-data">              
                     <p>Nome: <input type="text" name="nome" size="35" placeholder="<?php echo "$nome_cliente"?>"><br>
                     <p>Sobrenome: <input type="text" name="snome" size="35" placeholder="<?php echo "$snome_cliente"?>"><br>
-                    <p>Telefone: <input type="text" name="endereco" size="35" placeholder="<?php echo"$telefone_cliente"?>"><br>
-                    <p>Email: <input type="text" name="cidade" size="35" placeholder="<?php echo"$email_cliente"?>"><br>
-                    <p>senha: <input type="password" name="descricao" size="35"><br>
+                    <p>Telefone: <input type="text" name="telefone" size="35" placeholder="<?php echo"$telefone_cliente"?>"><br>
+                    <p>Email: <input type="text" name="email" size="35" placeholder="<?php echo"$email_cliente"?>"><br>
+                    <p>senha: <input type="password" name="senha" size="35"><br>
                     <p>Confimar a senha: <input type="password" name="descricao" size="35"><br>
                     <p><button type="submit" class="btn btn-success" name="editar" value="editar">Pronto</button></p>
                     <?php } ?>

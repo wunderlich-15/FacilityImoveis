@@ -4,10 +4,10 @@ require "Pages/header.php";
 <title>Meus anuncios</title>
 <body>
     <div class="container">
-    <h1>Meus Anuncios</h1>
+        <h1>Meus Anuncios</h1> <a href="anunciar.php" class="btn btn-primary">Anunciar</a> 
         <?php
             $id_corretor=$_SESSION['id_corretor'];
-            $query_anuncio = "SELECT id_anuncio, titulo_anuncio, valor_anuncio FROM anuncio WHERE id_vendedor = '{$id_corretor}' ORDER BY id_anuncio DESC";
+            $query_anuncio = "SELECT * FROM anuncio WHERE id_vendedor = '{$id_corretor}' ORDER BY id_anuncio DESC";
             $result_anuncio=mysqli_query($conexao, $query_anuncio); 
             if(mysqli_num_rows($result_anuncio) > 0){
             }
@@ -24,7 +24,7 @@ require "Pages/header.php";
                 ?>
                 <div class="col text-center">
                 <div class="card h-100">
-                <img src="..." class="card-img-top" alt="...">
+                <img src="Images/upload/<?php echo"$img_anuncio"; ?>" class="card-img-top" alt="...">
                 <div class="card-body">
                 <h5 class="card-title"><?php echo "$titulo_anuncio"; ?></h5>
                 <p class="card-text"><?php echo "R$ $valor_anuncio"?></p>

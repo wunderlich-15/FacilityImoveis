@@ -35,6 +35,7 @@ $telefone = $row['telefone_corretor'];
 </select>
 <p>Valor:<input type="number" name="valor" size="35"><br>
 <p>Descricao:<input type="text" name="descricao" size="60"><br>
+<p>Imagem: <input type="file" required name="arquivo">
 <p><button class="btn btn-success" type="submit" name="anunciar" value="Anunciar">Anunciar</button></p>
 
 <?php
@@ -46,9 +47,17 @@ if(isset($_POST['anunciar'])){
     $tipo = $_POST['tipo'];
     $valor = $_POST['valor'];
     $descricao = $_POST['descricao'];
+    if(isset($_FILES['arquivo'])){
 
-    $sql2 = "INSERT INTO anuncio (titulo_anuncio, endereco_anuncio, cidade_anuncio, tipo_anuncio, valor_anuncio, descricao_anuncio, criacao_anuncio, id_vendedor, nome_vendedor, telefone_vendedor) 
-            VALUES ('$titulo', '$endereco', '$cidade','$tipo', '$valor', '$descricao', NOW() ,'$id', '$nome', '$telefone')";
+        $extensao = strtolower(substr($_FILES['arquivo']['name'], -4));
+        $novo_nome = md5(time()). $extensao;
+        $diretorio = "Images/upload/"; 
+
+        move_uploaded_file($_FILES['arquivo']['tmp_name'], $diretorio.$novo_nome);
+
+    }
+    $sql2 = "INSERT INTO anuncio (titulo_anuncio, endereco_anuncio, cidade_anuncio, tipo_anuncio, valor_anuncio, descricao_anuncio, criacao_anuncio, id_vendedor, nome_vendedor, telefone_vendedor, img_anuncio) 
+            VALUES ('$titulo', '$endereco', '$cidade','$tipo', '$valor', '$descricao', NOW() ,'$id', '$nome', '$telefone', '$novo_nome')";
 
 
     if($conexao->query($sql2) === TRUE){

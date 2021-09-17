@@ -16,6 +16,7 @@ while($row=mysqli_fetch_assoc($run_sql)){
     $cidade_anuncio = $row["cidade_anuncio"];
     $valor_anuncio = $row["valor_anuncio"];
     $descricao_anuncio = $row["descricao_anuncio"];
+    $img_anuncio = $row["img_anuncio"];
     echo"$id_anuncio";
 ?>
 <title>Editar: <?php echo"$titulo_anuncio"?></title>
@@ -24,7 +25,9 @@ while($row=mysqli_fetch_assoc($run_sql)){
         <div class="row">
             <h1>Editar Anuncio</h1>
             <div class="col-md-6">
-                img
+            <form action="Scripts/PHP/edit-anuncio.php?id=<?php echo"$id_anuncio"?>" method="Post" enctype="multipart/form-data">
+            <p><img src="Images/upload/<?php echo"$img_anuncio"?>" class="img-fluid" alt="..."></p>
+            <p>Foto do anúncio: <input type="file" required name="arquivo"></p>
             </div>
             <div class="col-md-6">
                 <form action="Scripts/PHP/edit-anuncio.php?id=<?php echo"$id_anuncio"?>" method="Post" enctype="multipart/form-data">

@@ -9,9 +9,8 @@ if($conexao->query($sql) === TRUE){
     header("location:  ../../login.php");
     session_destroy();
     session_unset();
+    header("Refresh:2");
     exit;
 }
-session_destroy();
-session_unset();
 $conexao->db = null;
 ?>

@@ -7,8 +7,16 @@ $id_per = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
     $snome = $_POST['snome'];
     $email = $_POST['email'];
     $senha = md5($_POST['senha']);
+    if(isset($_FILES['arquivo'])){
 
-    $sql2 = "UPDATE cliente SET nome_cliente='$nome', telefone_cliente='$telefone', email_cliente='$email', snome_cliente='$snome', senha_cliente='$senha' WHERE id_cliente = '{$id_per}'";
+        $extensao = strtolower(substr($_FILES['arquivo']['name'], -4));
+        $novo_nome = md5(time()). $extensao;
+        $diretorio = "../../Images/upload/profile/cliente/"; 
+  
+     move_uploaded_file($_FILES['arquivo']['tmp_name'], $diretorio.$novo_nome);
+  
+    }
+    $sql2 = "UPDATE cliente SET nome_cliente='$nome', telefone_cliente='$telefone', email_cliente='$email', snome_cliente='$snome', senha_cliente='$senha', foto_cliente='$novo_nome' WHERE id_cliente = '{$id_per}'";
 
     if($conexao->query($sql2) === TRUE){
         header("location:../../painel.php");

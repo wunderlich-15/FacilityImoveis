@@ -6,7 +6,7 @@ echo "$id_anun";
 $sql="DELETE FROM cliente WHERE id_cliente='{$id_per}'";
     
 if($conexao->query($sql) === TRUE){
-    header("location:  ../../home.php");
+    header("location:  ../../index.php");
     session_destroy();
     session_unset();
     exit;

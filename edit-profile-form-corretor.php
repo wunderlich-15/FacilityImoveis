@@ -25,7 +25,9 @@ $id_per = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
             <div class="row">
                 <h1>Editar Perfil</h1>
                 <div class="col-md-6">
-                    img
+                <form action="Scripts/PHP/edit-profile-corretor.php?id=<?php echo"$id_corretor"?>" method="Post" enctype="multipart/form-data">
+                <img src="Images/upload/profile/corretor/<?php echo $row["foto_corretor"]?>" class="img-thumbnail" alt="...">
+                <p>Nova foto de perfil: <input type="file" required name="arquivo">
                 </div>
                 <div class="col-md-6">
                     <form action="Scripts/PHP/edit-profile-corretor.php?id=<?php echo"$id_corretor"?>" method="Post" enctype="multipart/form-data">
