@@ -17,3 +17,11 @@ if('status_login' === true){
 
 //////////
 git push -u origin main
+
+
+//////////////////////////////////////////////////////
+<?php if($id_corretor === $id_vendedor){
+  <a href="edit-product-form.php?id=<?php echo "$id_anuncio"?>" class="btn btn-primary">Editar</a>
+  <form action="Scripts/PHP/Delete-anuncio.php?id=<?php echo"$id_anuncio"?>" method="post" enctype="multipart/form-data">
+  <button class="btn btn-danger" type="submit" name="delete">Excluir</button>
+<?php }?>

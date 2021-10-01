@@ -1,24 +1,22 @@
 <?php
-require "Pages/header.php";
+include "Pages/header.php";
+if(!isset($_GET['titulo'])){
+    header("location:../index.php");
+}
 ?>
-<title>Venda</title>
-<body>
-    <div class="container-fluid">
-    <h1>Venda</h1>
-        <?php
-            $query_anuncio = "SELECT * FROM anuncio WHERE tipo_anuncio = 'venda' ORDER BY id_anuncio DESC";
-            $result_anuncio=mysqli_query($conexao, $query_anuncio); 
-            if(mysqli_num_rows($result_anuncio) > 0){
-            }
-        ?>
-        <div class="row row-cols-1 row-cols-md-3 g-4">
+<div class="container">
+<?php
+$titulo="%".trim($_GET['titulo'])."%";
+
+$query_anuncio = "SELECT * FROM anuncio WHERE titulo_anuncio LIKE '$titulo'";
+$result_anuncio=mysqli_query($conexao, $query_anuncio);
+?>
+<h1> Resultados da sua busca por: <?php echo "$titulo" ?></h1>
+<div class="row row-cols-1 row-cols-md-3 g-4">
             <?php
-                while($row_anuncio=mysqli_fetch_assoc($result_anuncio)){
+            if (isset($result_anuncio)){
+                while($row_anuncio=mysqli_fetch_array($result_anuncio)){
                     extract($row_anuncio);
-                    /*echo "$titulo_anuncio <br>";
-                    echo "ID:  $id_anuncio <br>";
-                    echo "preço: $valor_anuncio <br>";
-                    echo "<hr>";*/
                 ?>
                 <div class="col text-center">
                 <div class="card h-100">
@@ -27,6 +25,7 @@ require "Pages/header.php";
                 <h5 class="card-title"><?php echo "$titulo_anuncio"; ?></h5>
                 <p class="card-text"><?php echo "R$ $valor_anuncio"?></p>
                 <p class="card-text"><?php echo "$cidade_anuncio"?></p>
+                <p class="card-text"><?php echo "$tipo_anuncio"?></p>
                 <a href="view-products.php?id=<?php echo $id_anuncio?>" class="btn btn-primary">Detalhes</a>
                 </div>
                 <div class="card-footer">
@@ -35,6 +34,10 @@ require "Pages/header.php";
                 </div>
                 </div>
                 <?php    
+                }
+                }else{ ?>
+                 <label> Nenhum resultado correspondente foi encontrado</label> 
+            <?php      
                 }
             ?>
         </div>
