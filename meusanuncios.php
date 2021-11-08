@@ -35,7 +35,7 @@ require "Pages/header.php";
                                 <a class="nav-link" style="color:black;" href="anunciar.php">Anunciar</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link disabled"  style="color:black;" href="meusanuncios.php">Chat</a>
+                                <a class="nav-link"  style="color:black;" href="chat.php">Chat</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" style="color:black;"data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Opções</a>

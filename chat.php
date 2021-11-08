@@ -6,6 +6,7 @@ if(isset($_SESSION['status_login']) === false){
     header("location: login.php");
 }
 ?>
+
 <?php //include "Scripts/PHP/connect.php";
 if (isset($_SESSION["login_corretor"]) === true){
     unset($_SESSION["login_cliente"]);
@@ -26,7 +27,7 @@ if (isset($_SESSION["login_corretor"]) === true){
                     <div class="container-fluid">
                         <ul class="nav nav-tabs justify-content-center">
                             <li class="nav-item">
-                                <a class="nav-link active"  style="background-color:#00BFA2; color:white;" aria-current="page" href="painel.php">Perfil</a>
+                                <a class="nav-link"  style="color:black;" aria-current="page" href="painel.php">Perfil</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link"  style="color:black;" href="meusanuncios.php">Meus Anúncios</a>
@@ -35,7 +36,7 @@ if (isset($_SESSION["login_corretor"]) === true){
                                 <a class="nav-link" style="color:black;" href="anunciar.php">Anunciar</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link"  style="color:black;" href="chat.php">Chat</a>
+                                <a class="nav-link active"  style="background-color:#00BFA2; color:white;" href="chat.php">Chat</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" style="color:black;"data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Opções</a>
@@ -50,49 +51,8 @@ if (isset($_SESSION["login_corretor"]) === true){
                     </div>
                 </div>
             </div>
-            <div class="container-fluid my-4" style="border:1px solid #00bfa2">
-                <div class="col-4 my-4">
-                    <h3>Dados Cadastrados:</h3>
-                    <p></p>
-                </div>
-                <div class="row my-4">
-                    <div class="col-4">
-                        <label>Nome
-                            <h4 ><b style="text-align:right;"><?php echo $row["nome_corretor"];?></b></h4>
-                        </label>
-                    </div>
-                    <div class="col-4">
-                        <label>Telefone de contato
-                            <h4><b><?php echo $row["telefone_corretor"];?></b></h4>
-                        </label>
-                    </div>
-                    <div class="col-4">
-                        <label>Creci
-                            <h4><b><?php echo $row["creci_corretor"];?></b></h4>
-                        </label>
-                    </div>
-                </div>
-                <div class="row my-4">
-                    <div class="col-4">
-                        <label>Email
-                            <h4><b><?php echo $row["email_corretor"];?></b></h4>
-                        </label>
-                    </div>
-                    <div class="col-4 d-flex align-items-end">
-                        <p></p>
-                    </div>
-                    <div class="col-2 d-flex align-items-end">
-                        <a href="edit-profile-form-corretor.php?id=<?php echo"$id"?>"><button class="btn btn-outline-primary">Editar Informações</button></a>
-                    </div>
-                </div>
-            </div>
-        </div> 
+        </div>
     <?php } ?>
-
-<!--<a href="edit-profile-form-corretor.php?id=<?php echo"$id"?>">Editar</a>
-<a href="anunciar.php"> Anunciar</a>
-<a href="meusanuncios.php">Anuncios</a>
-<p><a href="Scripts/PHP/delete-profile-corretor.php?id=<?php echo"$id"?>"><button class="btn btn-danger">APAGAR CONTA</button></p>-->
 <?php } ?>
 
 <?php
@@ -115,10 +75,10 @@ if(isset($_SESSION['login_cliente']) === true){
                     <div class="container-fluid">
                         <ul class="nav nav-tabs justify-content-center">
                             <li class="nav-item">
-                                <a class="nav-link active"  style="background-color:#00BFA2; color:white;" aria-current="page" href="painel.php">Perfil</a>
+                                <a class="nav-link"   style="color:black;" aria-current="page" href="painel.php">Perfil</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link"  style="color:black;" href="chat.php">Chat</a>
+                                <a class="nav-link active" style="background-color:#00BFA2; color:white;" href="chat.php">Chat</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" style="color:black;"data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Opções</a>
@@ -133,40 +93,24 @@ if(isset($_SESSION['login_cliente']) === true){
                     </div>
                 </div>
             </div>
-            <div class="container-fluid my-4" style="border:1px solid #00bfa2">
-                <div class="col-4 my-4">
-                    <h3>Dados Cadastrados:</h3>
-                    <p></p>
-                </div>
-                <div class="row my-4">
-                    <div class="col-4">
-                        <label>Nome
-                            <h4 ><b style="text-align:right;"><?php echo $row["nome_cliente"];?></b></h4>
-                        </label>
-                    </div>
-                    <div class="col-4">
-                        <label>Telefone de contato
-                            <h4><b><?php echo $row["telefone_cliente"];?></b></h4>
-                        </label>
-                    </div>
-                    <div class="col-4">
-                        <label>Email
-                            <h4><b><?php echo $row["email_cliente"];?></b></h4>
-                        </label>
-                    </div>
-                </div>
-                <div class="row my-4">
-                <div class="col-4 d-flex align-items-end">
-                    <p></p>
-                    </div>
-                    <div class="col-4 d-flex align-items-end">
-                        <p></p>
-                    </div>
-                    <div class="col-2 d-flex align-items-end">
-                        <a href="edit-profile-form-cliente.php?id=<?php echo"$id"?>"><button class="btn btn-outline-primary">Editar Informações</button></a>
-                    </div>
-                </div>
-            </div>
         </div> 
 <?php } ?>
 <?php } ?>
+
+<div class="row my-2">
+    <div class="col-4">
+    </div>
+    <div class="col-4">
+        <div class="search" style="background-color:#f9f9f9; border-radius:10px; border:1px solid #d8d8d8;">
+            <input type="text" name="titulo" style="height:35px; width:380px;" placeholder="Pesquisa" required></input> 
+            <button type="submit" class="btn btn-outline-success"><i class="bi bi-search"></i></button>
+        </div>  
+        <section class="users" style="background-color:#f9f9f9; border-radius:10px; border:1px solid #d8d8d8; max-height:450px;  overflow-y:auto; overflow-x:hidden;"> 
+            <div class="col my-2"> 
+                <div class="users-list">
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+<script src="Scripts/JS/chat.js"></script>

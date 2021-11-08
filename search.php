@@ -7,11 +7,12 @@ if(!isset($_GET['titulo'])){
 <div class="container">
 <?php
 $titulo="%".trim($_GET['titulo'])."%";
+$titulo2=trim($_GET['titulo']);
 
 $query_anuncio = "SELECT * FROM anuncio WHERE titulo_anuncio LIKE '$titulo'";
 $result_anuncio=mysqli_query($conexao, $query_anuncio);
 ?>
-<h1> Resultados da sua busca por: <?php echo "$titulo" ?></h1>
+<h1> Resultados da sua busca por: <?php echo "$titulo2" ?></h1>
 <div class="row row-cols-1 row-cols-md-3 g-4">
             <?php
             if (isset($result_anuncio)){

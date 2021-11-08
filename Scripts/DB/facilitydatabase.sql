@@ -47,6 +47,7 @@ ALTER TABLE corretor
 ALTER TABLE anuncio
 	ADD PRIMARY KEY ('id_anuncio');
 
+create table users( id_user int(11) not null, nome_user varchar(150) not null, foto_user varchar(255) not null, ocupacao_user varchar(8) not null )
 ALTER TABLE `cliente`
   MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 

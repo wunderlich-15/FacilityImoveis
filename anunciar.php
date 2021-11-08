@@ -21,6 +21,37 @@ $nome = $row['nome_corretor'];
 $telefone = $row['telefone_corretor'];
 
 }
+
+//inicio informaçãoes do anuncio
+if(isset($_POST['anunciar'])){
+    $titulo = $_POST['titulo'];
+    $endereco = $_POST['endereco'];
+    $cidade = $_POST['cidade'];
+    $cep = $_POST['cep']; 
+    $tipo = $_POST['tipo'];
+    $imovel = $_POST['imovel'];
+    $valor = $_POST['valor'];
+    $descricao = $_POST['descricao'];
+    if(isset($_FILES['arquivo'])){
+
+        $extensao = strtolower(substr($_FILES['arquivo']['name'], -4));
+        $novo_nome = md5(time()). $extensao;
+        $diretorio = "Images/upload/"; 
+
+        move_uploaded_file($_FILES['arquivo']['tmp_name'], $diretorio.$novo_nome);
+
+    }
+    $sql2 = "INSERT INTO anuncio (titulo_anuncio, endereco_anuncio, cidade_anuncio, cep_anuncio, tipo_anuncio, imovel_anuncio, valor_anuncio, descricao_anuncio, criacao_anuncio, id_vendedor, nome_vendedor, telefone_vendedor, img_anuncio) 
+            VALUES ('$titulo', '$endereco', '$cidade', '$cep','$tipo', '$imovel', '$valor', '$descricao', NOW() ,'$id', '$nome', '$telefone', '$novo_nome')";
+
+
+    if($conexao->query($sql2) === TRUE){
+        header("location: meusanuncios.php");
+    }
+    
+    $conexao->db = null;
+
+}
 ?>
 <style>
     body{
@@ -85,35 +116,3 @@ $telefone = $row['telefone_corretor'];
             </div>
         </div>
 </div>
-<?php
-//inicio informaçãoes do anuncio
-if(isset($_POST['anunciar'])){
-    $titulo = $_POST['titulo'];
-    $endereco = $_POST['endereco'];
-    $cidade = $_POST['cidade'];
-    $cep = $_POST['cep']; 
-    $tipo = $_POST['tipo'];
-    $imovel = $_POST['imovel'];
-    $valor = $_POST['valor'];
-    $descricao = $_POST['descricao'];
-    if(isset($_FILES['arquivo'])){
-
-        $extensao = strtolower(substr($_FILES['arquivo']['name'], -4));
-        $novo_nome = md5(time()). $extensao;
-        $diretorio = "Images/upload/"; 
-
-        move_uploaded_file($_FILES['arquivo']['tmp_name'], $diretorio.$novo_nome);
-
-    }
-    $sql2 = "INSERT INTO anuncio (titulo_anuncio, endereco_anuncio, cidade_anuncio, cep_anuncio, tipo_anuncio, imovel_anuncio, valor_anuncio, descricao_anuncio, criacao_anuncio, id_vendedor, nome_vendedor, telefone_vendedor, img_anuncio) 
-            VALUES ('$titulo', '$endereco', '$cidade', '$cep','$tipo', '$imovel', '$valor', '$descricao', NOW() ,'$id', '$nome', '$telefone', '$novo_nome')";
-
-
-    if($conexao->query($sql2) === TRUE){
-        header("location: meusanuncios.php");
-    }
-    
-    $conexao->db = null;
-
-}
-?>

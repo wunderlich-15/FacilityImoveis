@@ -55,7 +55,14 @@ nav .nav-itens li a{
 nav .nav-itens li a:hover{
     color:#009a53;
 }
-
+.users{
+    background-color:#f9f9f9;
+    border-radius:10px; 
+    border:1px solid #d8d8d8; 
+    max-height:400px;  
+    overflow-y:auto; 
+    overflow-x:hidden;
+}
 /*nav form{
     display: flex;
     height: 40px;
