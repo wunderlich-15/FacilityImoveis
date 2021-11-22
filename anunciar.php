@@ -11,8 +11,8 @@ if (isset($_SESSION["login_corretor"]) === false){
 }
 
 //informações corretor
-$id = $_SESSION['id_corretor'];
-$sql1 = "SELECT nome_corretor, telefone_corretor FROM corretor WHERE id_corretor = '{$id}'";
+$id_p = $_SESSION['id_corretor'];
+$sql1 = "SELECT nome_corretor, telefone_corretor FROM corretor WHERE id_corretor = '{$id_p}'";
 $run_sql = mysqli_query($conexao, $sql1);
 if(mysqli_num_rows($run_sql) > 0){
 }
@@ -42,7 +42,7 @@ if(isset($_POST['anunciar'])){
 
     }
     $sql2 = "INSERT INTO anuncio (titulo_anuncio, endereco_anuncio, cidade_anuncio, cep_anuncio, tipo_anuncio, imovel_anuncio, valor_anuncio, descricao_anuncio, criacao_anuncio, id_vendedor, nome_vendedor, telefone_vendedor, img_anuncio) 
-            VALUES ('$titulo', '$endereco', '$cidade', '$cep','$tipo', '$imovel', '$valor', '$descricao', NOW() ,'$id', '$nome', '$telefone', '$novo_nome')";
+            VALUES ('$titulo', '$endereco', '$cidade', '$cep','$tipo', '$imovel', '$valor', '$descricao', NOW() ,'$id_p', '$nome', '$telefone', '$novo_nome')";
 
 
     if($conexao->query($sql2) === TRUE){

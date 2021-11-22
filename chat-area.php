@@ -134,7 +134,7 @@ if(mysqli_num_rows($sql2) > 0){
             <form action="#" class="typing-area" autocomplete="off">
                 <input type="text" name="outgoing-id" value="<?php echo $id ?>" hidden>
                 <input type="text" name="incoming-id" value="<?php echo $id_user ?>" hidden>
-                <input type="text" name="message" class="form-control" placeholder="insira aqui sua mensagem" aria-label="Username" aria-describedby="basic-addon1">
+                <input type="text" name="message" class="input-field" placeholder="insira aqui sua mensagem">
                 <button type="button" class="btn btn-outline-success"><i class="bi bi-reply-fill"></i></button>
             </form>
         </div>

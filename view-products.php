@@ -35,7 +35,7 @@ if (isset($_SESSION['status_login']) === true){
                         <center><h2 style="font-size:25px;"><?php echo "$nome_vendedor"?></h2>
                                 <h2 style="font-size:20px; color:#00bfa2;"><i class="bi bi-telephone-fill"></i><?php echo "  $telefone_vendedor"?></h2></center>
                         <div class="d-grid gap-2 col-9 mx-auto">
-                            <button class="btn btn-success" style="background-color:#00bfa2; border:1px solid #d8d8d8;" type="submit" name="anunciar" value="anunciar"><i class="bi bi-chat-fill"></i>  Chat</button></p>
+                            <a href="chat-area.php?id_user=<?php echo $id_vendedor ?>" style="background-color:#00bfa2; border:1px solid #d8d8d8;" class="btn btn-primary"><i class="bi bi-chat-fill"></i>  Chat</a></p>
                             <button class="btn btn-success" style="background-color:#00bfa2; border:1px solid #d8d8d8;" type="submit" name="anunciar" value="anunciar"><i class="bi bi-megaphone-fill"></i>  Anúncios</button></p>
                         </div>
                     </div>
