@@ -1,7 +1,7 @@
 <?php require "Pages/header.php";
 ?>
     <section>
-      <div class="Carousel">
+      <div class="Carousel my-2" style="max-height:1000px;">
          <!--Inicio Do carrossel (Remover caso n for index)-->
          <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
             <ol class="carousel-indicators">
@@ -44,7 +44,41 @@
         <!--Fim do Carrossel-->
       </div>
     </section>
-    <section class="most-recent">
-      
-    </section>
+    <div class="container-fluid my-4" style="height: 650px;">
+    
+    <div class="col-8">
+      <h1>Anuncios mais recentes:</h1>
+    </div>
+      <?php
+              $query_anuncio = "SELECT * FROM anuncio ORDER BY id_anuncio DESC LIMIT 3";
+              $result_anuncio=mysqli_query($conexao, $query_anuncio); 
+              if(mysqli_num_rows($result_anuncio) > 0){
+              }
+      ?>
+              <div class="row row-cols-1 row-cols-md-3 g-4">
+              <?php
+                  while($row_anuncio=mysqli_fetch_assoc($result_anuncio)){
+                      extract($row_anuncio);
+                      /*echo "$titulo_anuncio <br>";
+                      echo "ID:  $id_anuncio <br>";
+                      echo "preço: $valor_anuncio <br>";
+                      echo "<hr>";*/
+                  ?>
+                  <div class="col text-center">
+                  <div class="card h-100">
+                  <img src="Images/upload/<?php echo"$img_anuncio"; ?>" class="card-img-top" alt="...">
+                  <div class="card-body">
+                  <h5 class="card-title"><?php echo "$titulo_anuncio"; ?></h5>
+                  <p class="card-text"><?php echo "R$ $valor_anuncio"?></p>
+                  <p class="card-text"><?php echo "$tipo_anuncio"?></p>
+                  <p class="card-text"><?php echo "$imovel_anuncio"?></p>
+                  <a href="view-products.php?id=<?php echo $id_anuncio?>" style="background-color:#00bfa2; border:1px solid #00bfa2;" class="btn btn-primary">Detalhes</a>
+                  </div>
+                  </div>
+                  </div>
+                  <?php    
+                  }
+              ?>
+            </div>
+    </div>
 <?php require "Pages/footer.php"?>

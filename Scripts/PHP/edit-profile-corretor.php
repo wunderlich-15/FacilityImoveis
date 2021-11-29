@@ -16,9 +16,11 @@ $id_per = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
      move_uploaded_file($_FILES['arquivo']['tmp_name'], $diretorio.$novo_nome);
   
   }
+  $image="Images/upload/profile/corretor/$novo_nome";
     $sql2 = "UPDATE corretor SET nome_corretor='$nome', telefone_corretor='$telefone', email_corretor='$email', creci_corretor='$creci', senha_corretor='$senha', foto_corretor='$novo_nome' WHERE id_corretor = '{$id_per}'";
+    $sql3 = "UPDATE users SET nome_user='$nome', foto_user='$image'  WHERE id_user = '{$id_per}'";
 
-    if($conexao->query($sql2) === TRUE){
+    if(($conexao->query($sql2) === TRUE) && ($conexao->query($sql3) === TRUE)){
         header("location:../../painel.php");
         $_SESSION['status_edit'] == true;
     }

@@ -4,7 +4,7 @@ require "Pages/header.php";
 <title>Venda</title>
 <body>
     <div class="container-fluid">
-    <h1>Venda</h1>
+    <h1>Imóveis a venda</h1>
         <?php
             $query_anuncio = "SELECT * FROM anuncio WHERE tipo_anuncio = 'venda' ORDER BY id_anuncio DESC";
             $result_anuncio=mysqli_query($conexao, $query_anuncio); 

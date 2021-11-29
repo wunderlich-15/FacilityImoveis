@@ -27,23 +27,26 @@ body{
                 </div>
             </div>
                 <form action="Scripts/PHP/login.php" method="POST">
-                <div class="col-2 my-2">
-                <label>Email: <input type="text" name="email" size="35"><br></label>
+                <div class="col my-2">
+                <label>Email: <input type="text" class="form-control" placeholder="" size="90" name="email"><br></label>
                 </div>
-                <div class="col-2 my-2">
-                <label>Senha: <input type="password" name="senha" size="25"><br></label>
+                <div class="col my-2">
+                <label>Senha: <input type="password" class="form-control" placeholder="" size="30" name="senha"><br></label>
                 </div>
                 
                 <div class="row my-2">
                 <p>Sou:</p>
                     <div class="col-4">
-                        <input type="radio" name="tipo" value="corretor"> Corretor</input>
+                    <input class="form-check-input" type="radio" name="tipo" value="corretor" id="flexRadioDefault1"> Corretor</input>
                     </div>
                     <div class="col-3">
-                        <input type="radio" name="tipo" value="cliente"> Cliente</input>
+                    <input class="form-check-input" type="radio" name="tipo" value="cliente" id="flexRadioDefault1"> Cliente</input>
                     </div>
                 </div>
-                <p><button type="submit" class="btn btn-success" name="submit" value="entrar">Entrar</button></p></p>
+                <div class="row">
+                    <div class="col-7"><p><button type="submit" class="btn btn-success" name="submit" value="entrar">Entrar</button></p></p></div>
+                    <div class="col-5"><a href="cadastrocliente.php" style="color:#00bfa2;">CADASTRE-SE AQUI!</a></div>
+                </div>
         </div>
     </div>
 </div>

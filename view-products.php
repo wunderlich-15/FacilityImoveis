@@ -3,11 +3,11 @@ require "Pages/header.php";
 $id_anun = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 ?>
 <?php
-if (isset($_SESSION['status_login']) === true){
+if (isset($_SESSION['login_corretor']) === true){
  $id_corretor=($_SESSION['id_corretor']);
 }else{
     $id_corretor=isset($_SESSION['id_corretor']);
-    unset($_SESSION['status_login']);
+    unset($_SESSION['login_corretor']);
 }
  $query_anuncio = "SELECT * FROM anuncio WHERE id_anuncio ='{$id_anun}'LIMIT 1";
  $result_anuncio=mysqli_query($conexao, $query_anuncio); 

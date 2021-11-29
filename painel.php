@@ -6,6 +6,7 @@ if(isset($_SESSION['status_login']) === false){
     header("location: login.php");
 }
 ?>
+<body>
 <?php //include "Scripts/PHP/connect.php";
 if (isset($_SESSION["login_corretor"]) === true){
     unset($_SESSION["login_cliente"]);
@@ -41,7 +42,7 @@ if (isset($_SESSION["login_corretor"]) === true){
                                 <a class="nav-link dropdown-toggle" style="color:black;"data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Opções</a>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="edit-profile-form-corretor.php?id=<?php echo"$id"?>">Editar Perfil</a></li>
-                                    <li><a class="dropdown-item" style="color:red;" href="Scripts/PHP/delete-profile-corretor.php?id=<?php echo"$id"?>">APAGAR CONTA</a></li>
+                                    <li><a class="dropdown-item" style="color:red;" href="Scripts/PHP/delete-profile-corretor.php?id=<?php echo"$id"?>"data-confirm='esta ação é irreversivel tem certeza?'>APAGAR CONTA</a></li>
                                     <li><hr class="dropdown-divider"></li>
                                     <li><a class="dropdown-item" href="Scripts/PHP/logout.php">Sair</a></li>
                                 </ul>
@@ -124,7 +125,7 @@ if(isset($_SESSION['login_cliente']) === true){
                                 <a class="nav-link dropdown-toggle" style="color:black;"data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Opções</a>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="edit-profile-form-cliente.php?id=<?php echo"$id"?>">Editar Perfil</a></li>
-                                    <li><a class="dropdown-item" style="color:red;" href="Scripts/PHP/delete-profile-cliente.php?id=<?php echo"$id"?>">APAGAR CONTA</a></li>
+                                    <li><a class="dropdown-item" style="color:red;" a href="Scripts/PHP/delete-profile-cliente.php?id=<?php echo"$id"?>" data-confirm='esta ação é irreversivel tem certeza?'>APAGAR CONTA</a></li>
                                     <li><hr class="dropdown-divider"></li>
                                     <li><a class="dropdown-item" href="Scripts/PHP/logout.php">Sair</a></li>
                                 </ul>
@@ -170,3 +171,4 @@ if(isset($_SESSION['login_cliente']) === true){
         </div> 
 <?php } ?>
 <?php } ?>
+<script src="Scripts/JS/delete-confirm.js"></script>

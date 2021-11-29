@@ -50,26 +50,26 @@ $id_per = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
                         <div class="row">
                             <div class="col-7" style="border-right:2px solid #00bfa2">
                             <h1>Edite suas informações</h1>
-                                <div class="col-6 my-2">
+                                <div class="col my-2">
                                     <form action="Scripts/PHP/edit-profile-cliente.php?id=<?php echo"$id_cliente"?>" method="Post" enctype="multipart/form-data">
-                                    <label>Nome: <input type="text" name="nome" size="35" placeholder="<?php echo "$nome_cliente"?>"><br></label>
+                                    <label>Nome: <input type="text" class="form-control" name="nome" size="35" placeholder="<?php echo "$nome_cliente"?>"><br></label>
                                 </div>
-                                <div class="col-4 my-2">
-                                    <label>Telefone: <input type="text" name="telefone" size="35" placeholder="<?php echo"$telefone_cliente"?>"><br></label>
+                                <div class="col-6 my-2">
+                                    <label>Telefone: <input type="text" class="form-control" name="telefone" size="35" placeholder="<?php echo"$telefone_cliente"?>"><br></label>
                                 </div>
-                                <div class="col-4 my-2">
-                                    <label>Email: <input type="text" name="email" size="35" placeholder="<?php echo"$email_cliente"?>"><br></label>
+                                <div class="col-8 my-2">
+                                    <label>Email: <input type="text" class="form-control" name="email" size="35" placeholder="<?php echo"$email_cliente"?>"><br></label>
                                 </div>
                                 <div class="row my-2">
-                                    <div class="col-4 my-2">
-                                        <label>Senha: <input type="password" name="senha" size="15"><br></label>
+                                    <div class="col-6 my-2">
+                                        <label>Senha: <input type="password" class="form-control" name="senha" size="15"><br></label>
                                     </div>
-                                    <div class="col-2 my-2">
-                                        <label>Confirme sua senha: <input type="password" name="senha" size="15"><br></label>
+                                    <div class="col-6 my-2">
+                                        <label>Confirme sua senha: <input type="password" class="form-control" name="senha" size="15"><br></label>
                                     </div>
                                 </div>
-                                <div class="col-3 my-2">
-                                    <label>Nova foto de perfil: <input type="file" required name="arquivo"></label>
+                                <div class="col-8 my-2">
+                                    <label>Nova foto de perfil: <input type="file" class="form-control" required name="arquivo"></label>
                                 </div> 
                                 <div class="row">
                                     <div class="col-6">
@@ -88,4 +88,5 @@ $id_per = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
                             </div>
                         </div>
         </div>
+        <script src="Scripts/JS/delete-confirm.js"></script>
 </body>

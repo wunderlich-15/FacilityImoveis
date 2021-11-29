@@ -44,7 +44,7 @@ $id_per = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
                                 <a class="nav-link dropdown-toggle" style="color:black;"data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Opções</a>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="edit-profile-form-corretor.php?id=<?php echo"$id"?>">Editar Perfil</a></li>
-                                    <li><a class="dropdown-item" href="Scripts/PHP/delete-profile-corretor.php?id=<?php echo"$id"?>">APAGAR CONTA</a></li>
+                                    <li><a class="dropdown-item" href="Scripts/PHP/delete-profile-corretor.php?id=<?php echo"$id_per"?>" data-confirm='esta acao e irreversivel tem certeza?'>APAGAR CONTA</a></li>
                                     <li><hr class="dropdown-divider"></li>
                                     <li><a class="dropdown-item" href="Scripts/PHP/logout.php">Sair</a></li>
                                 </ul>
@@ -58,29 +58,29 @@ $id_per = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
                         <div class="row">
                             <div class="col-7" style="border-right:2px solid #00bfa2">
                             <h1>Edite suas informações</h1>
-                                <div class="col-6 my-2">
+                                <div class="col my-2">
                                     <form action="Scripts/PHP/edit-profile-corretor.php?id=<?php echo"$id_corretor"?>" method="Post" enctype="multipart/form-data">
-                                    <label>Nome: <input type="text" name="nome" size="35" placeholder="<?php echo "$nome_corretor"?>"><br></label>
+                                    <label>Nome: <input type="text" class="form-control" name="nome" size="35" placeholder="<?php echo "$nome_corretor"?>"><br></label>
                                 </div>
-                                <div class="col-4 my-2">
-                                    <label>Telefone: <input type="text" name="telefone" size="35" placeholder="<?php echo"$telefone_corretor"?>"><br></label>
+                                <div class="col-6 my-2">
+                                    <label>Telefone: <input type="text" class="form-control" name="telefone" size="35" placeholder="<?php echo"$telefone_corretor"?>"><br></label>
                                 </div>
-                                <div class="col-4 my-2">
-                                    <label>Email: <input type="text" name="email" size="35" placeholder="<?php echo"$email_corretor"?>"><br></label>
+                                <div class="col-8 my-2">
+                                    <label>Email: <input type="text" class="form-control" name="email" size="35" placeholder="<?php echo"$email_corretor"?>"><br></label>
                                 </div>
-                                <div class="col-2 my-2">    
-                                    <label>Creci: <input type="text" name="creci" size="35" placeholder="<?php echo"$creci_corretor"?>"><br></label>
+                                <div class="col-6 my-2">    
+                                    <label>Creci: <input type="text" class="form-control" name="creci" size="35" placeholder="<?php echo"$creci_corretor"?>"><br></label>
                                 </div>
                                 <div class="row my-2">
-                                    <div class="col-4 my-2">
-                                        <label>Senha: <input type="password" name="senha" size="15"><br></label>
+                                    <div class="col-6 my-2">
+                                        <label>Senha: <input type="password" class="form-control" name="senha" size="15"><br></label>
                                     </div>
-                                    <div class="col-2 my-2">
-                                        <label>Confirme sua senha: <input type="password" name="senha" size="15"><br></label>
+                                    <div class="col-6 my-2">
+                                        <label>Confirme sua senha: <input type="password" class="form-control" name="senha" size="15"><br></label>
                                     </div>
                                 </div>
-                                <div class="col-3 my-2">
-                                    <label>Nova foto de perfil: <input type="file" required name="arquivo"></label>
+                                <div class="col-8 my-2">
+                                    <label>Nova foto de perfil: <input type="file" class="form-control" required name="arquivo"></label>
                                 </div> 
                                 <div class="row">
                                     <div class="col-6">
@@ -99,4 +99,5 @@ $id_per = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
                             </div>
                         </div>
         </div>
+        <script src="Scripts/JS/delete-confirm.js"></script>
 </body>

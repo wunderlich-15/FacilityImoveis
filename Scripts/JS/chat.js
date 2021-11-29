@@ -1,6 +1,21 @@
 const searchBar = document.querySelector(".search input");
 usersList = document.querySelector(".users, .usersList");
 
+setInterval(()=>{
+    let xhr = new XMLHttpRequest();
+    xhr.open("GET" , "Scripts/PHP/users.php", true);
+    xhr.onload = ()=>{
+        if(xhr.readyState === XMLHttpRequest.DONE){
+            if(xhr.status === 200){
+                let data = xhr.response;
+                if(!searchBar.classList.contains("active")){
+                    usersList.innerHTML = data;
+                }
+            }
+        }
+    }
+    xhr.send(formData); 
+},500)
 
 searchBar.onkeyup = ()=>{
     let searchTerm = searchBar.value;
@@ -20,21 +35,6 @@ searchBar.onkeyup = ()=>{
             }
         }
     }
-    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhr.send("searchTerm=" + searchTerm);
 }
-setInterval(()=>{
-    let xhr = new XMLHttpRequest();
-    xhr.open("GET" , "Scripts/PHP/users.php", true);
-    xhr.onload = ()=>{
-        if(xhr.readyState === XMLHttpRequest.DONE){
-            if(xhr.status === 200){
-                let data = xhr.response;
-                if(!searchBar.classList.contains("active")){
-                    usersList.innerHTML = data;
-                }
-            }
-        }
-    }
-    xhr.send(formData); 
-},500);

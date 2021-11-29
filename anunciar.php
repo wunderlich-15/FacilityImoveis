@@ -57,6 +57,7 @@ if(isset($_POST['anunciar'])){
     body{
         background-image:url(Images/img1.png);
         background-repeat:no-repeat;
+        background-size:cover;
     }
 </style>
 <title>Novo Anuncio</title>
@@ -66,45 +67,45 @@ if(isset($_POST['anunciar'])){
         <div class="my-2">
             <div class="col-4 my-2">
                 <label>
-                Titulo:<span style="color:red; font-size:5">*</span><input type="text" name="titulo" size="60"></label>
+                Titulo:<span style="color:red; font-size:5">*</span><input type="text" class="form-control" name="titulo" size="60"></label>
             </div>
             <div class="col-3 my-2">
                 <label>
-                Endereco:<span style="color:red; font-size:5">*</span><input type="text" name="endereco" size="35"><br></label>
+                Endereco:<span style="color:red; font-size:5">*</span><input type="text" class="form-control" name="endereco" size="35"><br></label>
             </div>
             <div class="col-3 my-2">
                 <label>
-                Cidade:<span style="color:red; font-size:5">*</span><input type="text" name="cidade" size="35"><br></label>
+                Cidade:<span style="color:red; font-size:5">*</span><input type="text" class="form-control" name="cidade" size="35"><br></label>
             </div>
             <div class="col-2 my-2">
                 <label>
-                Cep:<span style="color:red; font-size:5">*</span><input type="number" name="cep" size="20"><br></label>
+                Cep:<span style="color:red; font-size:5">*</span><input type="number" class="form-control" name="cep" size="20"><br></label>
             </div>
             <div class="row my-2">
                 <div class="col-3 my-2">
                     <label>
-                    Tipo:<span style="color:red; font-size:5">*</span><select name="tipo"><br>
+                    Tipo:<span style="color:red; font-size:5">*</span><select class="form-select" name="tipo"><br>
                         <option value="Aluguel">Aluguel</option>
                         <option value="Venda">Venda</option>
                     </select></label>
                 </div>
                 <div class="col-3 my-2">
                     <label>
-                    Imovel:<span style="color:red; font-size:5">*</span><select name="imovel"><br>
+                    Imovel:<span style="color:red; font-size:5">*</span><select class="form-select" name="imovel"><br>
                         <option value="Apartamento">Apartamento</option>
                         <option value="Casa">Casa</option>
                     </select></label>
                 </div>
             </div>
             <div class="col-3 my-2">
-                Valor:<span style="color:red; font-size:5">*</span><input type="number" name="valor" size="35"><br>
+                Valor:<span style="color:red; font-size:5">*</span><input type="number" class="form-control" name="valor" size="35"><br>
             </div>
                 <div class="form-floating col-9 my-4">
                     <textarea class="form-control" name="descricao" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px;"></textarea>
                     <label for="floatingTextarea2">Descrição</label>
                 </div>
-            <div class="col-3 my-2">
-                Imagem:<span style="color:red; font-size:5">*</span> <input type="file" required name="arquivo">
+            <div class="col-5 my-2">
+                Imagem:<span style="color:red; font-size:5">*</span> <input type="file" class="form-control" id="inputGroupFile04" required name="arquivo" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
             </div>
             <div class="row my-2">
                 <div class="col-10">

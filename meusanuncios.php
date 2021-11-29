@@ -86,5 +86,6 @@ require "Pages/header.php";
                 }
             ?>
         </div>
-    </div> 
+    </div>
+    <script src="Scripts/JS/delete-confirm.js"></script>
 </body>

@@ -10,7 +10,7 @@ while($row = mysqli_fetch_assoc($sql)){
 
                                 <div class="col-6 my-2">
                                     <h5>'.$row['nome_user'].'</h5>
-                                    <h5 style="font-size:15px; color:#00bfa2;">Mensagem de teste</h5>
+                                    <h5 style="font-size:15px; color:#00bfa2;">'. $row['ocupacao_user'] .'</h5>
                                 </div>
                             
                             </div>

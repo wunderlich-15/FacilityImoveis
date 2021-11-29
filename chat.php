@@ -114,3 +114,4 @@ if(isset($_SESSION['login_cliente']) === true){
     </div>
 </div>
 <script src="Scripts/JS/chat.js"></script>
+<script src="Scripts/JS/delete-confirm.js"></script>

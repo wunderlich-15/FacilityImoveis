@@ -121,23 +121,21 @@ if(mysqli_num_rows($sql2) > 0){
                 </div>
             </div>
         </div>
-        <div class="col" style="background-color:#91D3FF; border-radius:10px; border:1px solid #d8d8d8; padding:10px 20px 20px 20px; max-height:450px; overflow-y:auto;">
-            <div class="card my-2" style="padding:5px; border-radius:15px 15px 15px 0; margin-right:auto; background-color:#00bfa2; color:white; max-width:300px">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            <div class="chat-box" style="height:450px; background-color:#91D3FF; border-radius:10px; border:1px solid #d8d8d8; padding:10px 20px 20px 20px; max-height:450px; overflow-y:auto;">
             
             </div>
-            <div class="card my-2" style="padding:5px; border-radius:15px 15px 0 15px; margin-left:auto; background-color:#fff; max-width:300px;">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-            </div>
-        </div>
-        <div class="input-group mb-3 my-2">
             <form action="#" class="typing-area" autocomplete="off">
-                <input type="text" name="outgoing-id" value="<?php echo $id ?>" hidden>
-                <input type="text" name="incoming-id" value="<?php echo $id_user ?>" hidden>
-                <input type="text" name="message" class="input-field" placeholder="insira aqui sua mensagem">
-                <button type="button" class="btn btn-outline-success"><i class="bi bi-reply-fill"></i></button>
+                <input type="text" name="outgoing-id" value="<?php echo $id ?>" hidden></input>
+                <input type="text" name="incoming-id" value="<?php echo $id_user ?>" hidden></input>
+                <div class="row">
+                    <div class="col-10">
+                        <input type="text" name="message" class="form-control" placeholder="insira aqui sua mensagem"></input>
+                    </div>
+                    <div class="col-1">
+                        <button type="button" class="btn btn-outline-success"><i class="bi bi-reply-fill"></i></button>
+                    </div>
+                </div>
             </form>
-        </div>
     </div>
 </div>
-<script src="Scripts/JS/msg,js"></script>
+<script src="Scripts/JS/msg.js"></script>

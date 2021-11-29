@@ -21,6 +21,7 @@ if(isset($_POST["submit"])){
 			}
 		}else{
 			$_SESSION['status_login'] = false;
+			header("Location:../../login.php");
 		}
 	}else{
 		$sql="SELECT * FROM corretor WHERE email_corretor='{$email}' AND senha_corretor='{$password}'";
