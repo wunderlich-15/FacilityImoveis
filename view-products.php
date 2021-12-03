@@ -3,16 +3,19 @@ require "Pages/header.php";
 $id_anun = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 ?>
 <?php
+//validação de login
 if (isset($_SESSION['login_corretor']) === true){
  $id_corretor=($_SESSION['id_corretor']);
 }else{
     $id_corretor=isset($_SESSION['id_corretor']);
     unset($_SESSION['login_corretor']);
 }
+//query de busca de informações no banoc de dados
  $query_anuncio = "SELECT * FROM anuncio WHERE id_anuncio ='{$id_anun}'LIMIT 1";
  $result_anuncio=mysqli_query($conexao, $query_anuncio); 
  if(mysqli_num_rows($result_anuncio) > 0){
  }
+ //extract para a frontend
  $row_anuncio=mysqli_fetch_assoc($result_anuncio);
  extract($row_anuncio);
 ?>
@@ -36,7 +39,7 @@ if (isset($_SESSION['login_corretor']) === true){
                                 <h2 style="font-size:20px; color:#00bfa2;"><i class="bi bi-telephone-fill"></i><?php echo "  $telefone_vendedor"?></h2></center>
                         <div class="d-grid gap-2 col-9 mx-auto">
                             <a href="chat-area.php?id_user=<?php echo $id_vendedor ?>" style="background-color:#00bfa2; border:1px solid #d8d8d8;" class="btn btn-primary"><i class="bi bi-chat-fill"></i>  Chat</a></p>
-                            <button class="btn btn-success" style="background-color:#00bfa2; border:1px solid #d8d8d8;" type="submit" name="anunciar" value="anunciar"><i class="bi bi-megaphone-fill"></i>  Anúncios</button></p>
+                            <a href="more-announcements.php?id=<?php echo $id_vendedor ?>" style="background-color:#00bfa2; border:1px solid #d8d8d8;" class="btn btn-primary"><i class="bi bi-megaphone-fill"></i>  Mais Anúncios</a></p>
                         </div>
                     </div>
                     <div class="col-9 my-2" style="background-color:#f9f9f9; border-radius:10px; border:1px solid #d8d8d8;">

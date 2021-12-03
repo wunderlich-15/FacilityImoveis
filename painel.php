@@ -97,11 +97,15 @@ if (isset($_SESSION["login_corretor"]) === true){
 <?php } ?>
 
 <?php
+//validação do login do cliente
 if(isset($_SESSION['login_cliente']) === true){
     unset($_SESSION["login_corretor"]);
     $id = $_SESSION["id_cliente"];
+
+    //query de seleção dos dados
     $sql = "SELECT * FROM cliente WHERE id_cliente ='{$id}'";
 
+    //metodo de validação da conexão do banco de dados
     $run_sql=mysqli_query($conexao, $sql);
     if(mysqli_num_rows($run_sql) > 0){
     }

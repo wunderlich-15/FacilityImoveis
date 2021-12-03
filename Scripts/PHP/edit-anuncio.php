@@ -1,7 +1,8 @@
 <?php
 include "connect.php";
 $id_anun = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
-//inicio informaçãoes do anuncio
+//inicio informações do anuncio
+//busca das informações no formulario pelo metodo POST
     $titulo = $_POST['titulo'];
     $endereco = $_POST['endereco'];
     $cidade = $_POST['cidade'];
@@ -17,8 +18,12 @@ $id_anun = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
         move_uploaded_file($_FILES['arquivo']['tmp_name'], $diretorio.$novo_nome);
      
      }
-    $sql2 = "UPDATE anuncio SET titulo_anuncio='$titulo', endereco_anuncio='$endereco', cidade_anuncio='$cidade', tipo_anuncio='$tipo', valor_anuncio='$valor', descricao_anuncio='$descricao', img_anuncio='$novo_nome' WHERE id_anuncio = '{$id_anun}'";
+    //query para o update das informações contidas no banco de dados
+    $sql2 = "UPDATE anuncio SET titulo_anuncio='$titulo', endereco_anuncio='$endereco',
+    cidade_anuncio='$cidade', tipo_anuncio='$tipo', valor_anuncio='$valor', 
+    descricao_anuncio='$descricao', img_anuncio='$novo_nome' WHERE id_anuncio = '{$id_anun}'";
 
+     //vaidação da conexão
     if($conexao->query($sql2) === TRUE){
         header("location:../../meusanuncios.php");
         $_SESSION['status_anuncio'] == true;

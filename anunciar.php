@@ -11,6 +11,7 @@ if (isset($_SESSION["login_corretor"]) === false){
 }
 
 //informações corretor
+//busca das infomações provindas de outra tabela (crud relacional)
 $id_p = $_SESSION['id_corretor'];
 $sql1 = "SELECT nome_corretor, telefone_corretor FROM corretor WHERE id_corretor = '{$id_p}'";
 $run_sql = mysqli_query($conexao, $sql1);
@@ -23,6 +24,7 @@ $telefone = $row['telefone_corretor'];
 }
 
 //inicio informaçãoes do anuncio
+//dados porvenientes do formulario pelo metodo post
 if(isset($_POST['anunciar'])){
     $titulo = $_POST['titulo'];
     $endereco = $_POST['endereco'];
@@ -41,10 +43,11 @@ if(isset($_POST['anunciar'])){
         move_uploaded_file($_FILES['arquivo']['tmp_name'], $diretorio.$novo_nome);
 
     }
+    //query de envio das informações para o sistema
     $sql2 = "INSERT INTO anuncio (titulo_anuncio, endereco_anuncio, cidade_anuncio, cep_anuncio, tipo_anuncio, imovel_anuncio, valor_anuncio, descricao_anuncio, criacao_anuncio, id_vendedor, nome_vendedor, telefone_vendedor, img_anuncio) 
             VALUES ('$titulo', '$endereco', '$cidade', '$cep','$tipo', '$imovel', '$valor', '$descricao', NOW() ,'$id_p', '$nome', '$telefone', '$novo_nome')";
 
-
+    //validação da query
     if($conexao->query($sql2) === TRUE){
         header("location: meusanuncios.php");
     }
@@ -65,13 +68,13 @@ if(isset($_POST['anunciar'])){
 <div class="container my-2" style="background-color:#fff; border:2px solid #00bfa2; opacity:0.95; border-radius:20px;">
     <form action="anunciar.php" method="Post" enctype="multipart/form-data">
         <div class="my-2">
-            <div class="col-4 my-2">
+            <div class="col-6 my-2">
                 <label>
                 Titulo:<span style="color:red; font-size:5">*</span><input type="text" class="form-control" name="titulo" size="60"></label>
             </div>
-            <div class="col-3 my-2">
+            <div class="col-7 my-2">
                 <label>
-                Endereco:<span style="color:red; font-size:5">*</span><input type="text" class="form-control" name="endereco" size="35"><br></label>
+                Endereço:<span style="color:red; font-size:5">*</span><input type="text" class="form-control" name="endereco" size="35"><br></label>
             </div>
             <div class="col-3 my-2">
                 <label>
